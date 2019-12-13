@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{62D41E89-F644-4F57-B6D0-A016E0526A65}</ProjectGuid>
+    <ProjectGuid>{F8F493EF-0FD3-4062-AC51-A8743016CA7F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>
     </RootNamespace>

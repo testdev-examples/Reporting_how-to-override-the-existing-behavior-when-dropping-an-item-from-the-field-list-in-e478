@@ -18,8 +18,7 @@ namespace FieldListDragDrop {
             : base(host) {
         }
         public override void HandleDragDrop(object sender, DragEventArgs e) {
-            AdornerService.ResetSnapping();
-            RulerService.HideShadows();
+            ResetUI(e);
 
             XRControl parent = BandViewSvc.GetControlByScreenPoint(new Point(e.X, e.Y));
             if (parent == null)
@@ -28,7 +27,7 @@ namespace FieldListDragDrop {
             XRRichText demoRichText = new XRRichText();
             PointF location = GetDragDropLocation(e, demoRichText, parent);
 
-            DesignTool.AddToContainer(Host, demoRichText);
+            DesignToolHelper.AddToContainer(Host, demoRichText);
 
             demoRichText.LocationF = location;
             demoRichText.Size = new Size(100, 25);
@@ -40,10 +39,6 @@ namespace FieldListDragDrop {
             bandPoint = BandViewSvc.SnapBandPoint(bandPoint, parent.Band, control, new XRControl[] { control });
             PointF screenPoint = BandViewSvc.ControlViewToScreen(bandPoint, parent.Band);
             return BandViewSvc.ScreenToControl(new RectangleF(screenPoint, SizeF.Empty), parent).Location;
-        }
-
-        static DragDataObject GetDragData(IDataObject dataObject) {
-            return (DragDataObject)dataObject.GetData(typeof(DragDataObject));
         }
     }
 }
