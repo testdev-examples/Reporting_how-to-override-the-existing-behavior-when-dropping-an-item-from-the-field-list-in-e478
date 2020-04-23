@@ -9,7 +9,7 @@
 # How to override the existing behavior when dropping an item from the Field List in the End-User Designer
 
 
-<p>This example illustrates how to override the existing drag&drop behavior by implementing the IFieldListDragDropService interface.</p>
+<p>This example demonstrates how to override the default drag-and-drop behavior by implementing a custom IFieldListDragDropService. In particular, we replace a default data field editor for XRRichText when dropping a field onto a design surface.</p>
 
 <br/>
 
